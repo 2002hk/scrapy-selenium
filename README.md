@@ -4,6 +4,35 @@
 - scrapy-selenium
 - ipython
 - virtualvenv
+## Project Structure
+```bash
+scraper/
+│── chromedriver.exe/
+│── venv/
+│── scraper/               # Project module
+│   ├── spiders/                # Spider definitions
+│   │   ├── __init__.py
+│   │   ├── quotespider.py        # Custom spider
+│   ├── __init__.py
+│   ├── items.py                # Define scraped data structure
+│   ├── middlewares.py          # Custom middlewares
+│   ├── pipelines.py            # Data processing pipelines
+│   ├── settings.py             # Scrapy settings
+│── scrapy.cfg                  # Scrapy configuration file
+│── requirements.txt            # Dependencies
+│── README.md                   # Project documentation
+```
+```bash
+## to create virtual env
+python -m venv venv
+python venv\Scripts\activate
+## to create project
+scrapy startproject scraper
+## go the spider folder
+scrapy genspider spidername '##paste webpage url'
+## to activate scrapy shell
+scrapy shell
+```
 ## Workflow
 ### Uses SeleniumRequest to Load JavaScript Content
 - Since the website loads dynamically, SeleniumRequest ensures JavaScript execution.
